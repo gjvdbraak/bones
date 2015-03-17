@@ -8,14 +8,14 @@
 // Web address........http://parse.ele.tue.nl/bones/
 //
 // == File information
-// Filename...........neighbourhood/example4.c
+// Filename...........neighbourhood/example04.c
 // Author.............Cedric Nugteren
-// Last modified on...16-April-2012
+// Last modified on...10-October-2014
 //
 
 #include <stdio.h>
 
-// This is 'example4', demonstrating naming (optional) in the classification to distingish the two input arrays
+// This is 'example04', demonstrating naming (optional) in the classification to distingish the two input arrays
 int main(void) {
 	int i;
 	float factor;

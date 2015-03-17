@@ -10,7 +10,7 @@
 // == File information
 // Filename...........element/example12.c
 // Author.............Cedric Nugteren
-// Last modified on...06-Aug-2012
+// Last modified on...10-October-2014
 //
 
 #include <stdio.h>

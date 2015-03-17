@@ -8,16 +8,16 @@
 // Web address........http://parse.ele.tue.nl/bones/
 //
 // == File information
-// Filename...........chunk/example2.c
+// Filename...........chunk/example02.c
 // Author.............Cedric Nugteren
-// Last modified on...16-April-2012
+// Last modified on...10-October-2014
 //
 
 #include <stdio.h>
 #define SIZE 2048
 #define HALFSIZE (SIZE/2)
 
-// This is 'example2', demonstrating a chunk-example without an inner-loop, everything is unrolled manually
+// This is 'example02', demonstrating a chunk-example without an inner-loop, everything is unrolled manually
 int main(void) {
 	int i;
 	

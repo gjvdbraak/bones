@@ -8,14 +8,14 @@
 // Web address........http://parse.ele.tue.nl/bones/
 //
 // == File information
-// Filename...........element/example7.c
+// Filename...........element/example07.c
 // Author.............Cedric Nugteren
-// Last modified on...16-April-2012
+// Last modified on...10-October-2014
 
 #include <stdio.h>
 #include <stdlib.h>
 
-// This is 'example7', demonstrating variable length arrays (C99 VLAs)
+// This is 'example07', demonstrating variable length arrays (C99 VLAs)
 int main(void) {
 	int a,b,c;
 	int dim_1A = 50;

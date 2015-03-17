@@ -8,9 +8,9 @@
 // Web address........http://parse.ele.tue.nl/bones/
 //
 // == File information
-// Filename...........chunk/example3.c
+// Filename...........chunk/example03.c
 // Author.............Cedric Nugteren
-// Last modified on...16-April-2012
+// Last modified on...10-October-2014
 //
 
 #include <stdio.h>
@@ -18,7 +18,7 @@
 #define TILE 64
 #define SIZE (BASE*TILE)
 
-// This is 'example3', demonstrating a chunked input and a chunked output, and showing the importance of ordering (array referenced first should be placed first)
+// This is 'example03', demonstrating a chunked input and a chunked output, and showing the importance of ordering (array referenced first should be placed first)
 int main(void) {
 	int i;
 	int t = 0;

@@ -8,14 +8,14 @@
 // Web address........http://parse.ele.tue.nl/bones/
 //
 // == File information
-// Filename...........shared/example2.c
+// Filename...........shared/example02.c
 // Author.............Cedric Nugteren
-// Last modified on...09-May-2012
+// Last modified on...10-October-2014
 //
 
 #include <stdio.h>
 
-// This is 'example2', demonstrating a 3D input reduction to scalar
+// This is 'example02', demonstrating a 3D input reduction to scalar
 int main(void) {
 	int a,b,c;
 	

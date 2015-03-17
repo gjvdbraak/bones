@@ -8,14 +8,14 @@
 // Web address........http://parse.ele.tue.nl/bones/
 //
 // == File information
-// Filename...........chunk/example5.c
+// Filename...........chunk/example05.c
 // Author.............Cedric Nugteren
-// Last modified on...16-April-2012
+// Last modified on...10-October-2014
 //
 
 #include <stdio.h>
 
-// This is 'example5', demonstrating a chunk to element example without a temporary variable but directly writing to the output
+// This is 'example05', demonstrating a chunk to element example without a temporary variable but directly writing to the output
 int main(void) {
 	int i,j;
 	int i2,j2;

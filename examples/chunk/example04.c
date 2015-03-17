@@ -39,8 +39,9 @@ int main(void) {
 	#pragma scop
 	#pragma species kernel A[0:SIZE-1]|element -> B[0:SIZE*2-1]|chunk(0:1)
 	for(i=0;i<SIZE;i++) {
+		float a = A[i];
 		B[i*2] = A[i];
-		if (A[i] > threshold) {
+		if (a > threshold) {
 			B[i*2+1] = A[i];
 		}
 		else {

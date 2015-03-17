@@ -15,7 +15,7 @@
 // == File information
 // Filename...........benchmark/2mm.c
 // Author.............Cedric Nugteren
-// Last modified on...03-April-2012
+// Last modified on...05-July-2013
 //
 
 #include "common.h"
