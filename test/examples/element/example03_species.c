@@ -8,18 +8,18 @@
 // Web address........http://parse.ele.tue.nl/bones/
 //
 // == File information
-// Filename...........element/example3.c
+// Filename...........element/example03.c
 // Author.............Cedric Nugteren
-// Last modified on...16-April-2012
+// Last modified on...10-October-2014
 //
 
 #include <stdio.h>
-#define N1 2//8
-#define N2 4//16
-#define N3 8//32
-#define N4 16//64
+#define N1 2
+#define N2 4
+#define N3 8
+#define N4 16
 
-// This is 'example3', demonstrating a 4D array and defines for array sizes
+// This is 'example03', demonstrating a 4D array and defines for array sizes
 int main(void) {
 	int i,j,k,l;
 	

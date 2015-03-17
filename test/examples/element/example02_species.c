@@ -8,14 +8,14 @@
 // Web address........http://parse.ele.tue.nl/bones/
 //
 // == File information
-// Filename...........element/example2.c
+// Filename...........element/example02.c
 // Author.............Cedric Nugteren
-// Last modified on...06-May-2013
+// Last modified on...10-October-2014
 //
 
 #include <stdio.h>
 
-// This is 'example2', demonstrating unordered element-wise computation
+// This is 'example02', demonstrating unordered element-wise computation
 int main(void) {
 	int i,j;
 	

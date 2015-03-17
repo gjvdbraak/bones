@@ -8,16 +8,16 @@
 // Web address........http://parse.ele.tue.nl/bones/
 //
 // == File information
-// Filename...........shared/example3.c
+// Filename...........shared/example03.c
 // Author.............Cedric Nugteren
-// Last modified on...16-April-2012
+// Last modified on...10-October-2014
 //
 
 #include <stdio.h>
 #include <stdlib.h>
 #define SIZE 1024
 
-// This is 'example3', demonstrating a reduction to a 2D array
+// This is 'example03', demonstrating a reduction to a 2D array
 int main(void) {
 	int i,p,q;
 	int index1,index2;

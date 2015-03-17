@@ -8,15 +8,15 @@
 // Web address........http://parse.ele.tue.nl/bones/
 //
 // == File information
-// Filename...........chunk/example4.c
+// Filename...........chunk/example04.c
 // Author.............Cedric Nugteren
-// Last modified on...16-April-2012
+// Last modified on...10-October-2014
 //
 
 #include <stdio.h>
 #define SIZE 1024
 
-// This is 'example4', a basic element to chunk example with an if-statement in the body
+// This is 'example04', a basic element to chunk example with an if-statement in the body
 int main(void) {
 	int i;
 	int threshold = 19;

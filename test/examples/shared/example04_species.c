@@ -8,16 +8,16 @@
 // Web address........http://parse.ele.tue.nl/bones/
 //
 // == File information
-// Filename...........shared/example4.c
+// Filename...........shared/example04.c
 // Author.............Cedric Nugteren
-// Last modified on...16-April-2012
+// Last modified on...10-October-2014
 //
 
 #include <stdio.h>
 #include <stdlib.h>
 #define SIZE 1024*1024
 
-// This is 'example4', demonstrating a basic 256-bin histogram computation
+// This is 'example04', demonstrating a basic 256-bin histogram computation
 int main(void) {
 	int i;
 	unsigned char index;

@@ -8,16 +8,16 @@
 // Web address........http://parse.ele.tue.nl/bones/
 //
 // == File information
-// Filename...........neighbourhood/example2.c
+// Filename...........neighbourhood/example02.c
 // Author.............Cedric Nugteren
-// Last modified on...16-April-2012
+// Last modified on...10-October-2014
 //
 
 #include <stdio.h>
 #define A 256
 #define B 512
 
-// This is 'example2', demonstrating a 2D array, a 2D neighbourhood and a for-loop-less notation of the neighbourhood accesses
+// This is 'example02', demonstrating a 2D array, a 2D neighbourhood and a for-loop-less notation of the neighbourhood accesses
 int main(void) {
 	int i,j;
 	

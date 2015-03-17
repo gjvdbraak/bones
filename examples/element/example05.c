@@ -39,7 +39,8 @@ int main(void) {
 	#pragma scop
 	#pragma species kernel in3[0:SIZE-1]|element ^ in2[0:SIZE-1]|element ^ in1[0:SIZE-1]|element -> out1[0:SIZE-1]|element ^ out2[0:SIZE-1]|element
 	for(i=0;i<SIZE;i++) {
-		if (in3[i] > 50) {
+		float i3 = in3[i];
+		if (i3 > 50) {
 			result = in2[i] / in1[i];
 		}
 		else {

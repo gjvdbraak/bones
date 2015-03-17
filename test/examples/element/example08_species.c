@@ -8,14 +8,14 @@
 // Web address........http://parse.ele.tue.nl/bones/
 //
 // == File information
-// Filename...........element/example8.c
+// Filename...........element/example08.c
 // Author.............Cedric Nugteren
-// Last modified on...16-April-2012
+// Last modified on...10-October-2014
 //
 
 #include <stdio.h>
 
-// This is 'example8', demonstrating a reading and writing from the same array
+// This is 'example08', demonstrating a reading and writing from the same array
 int main(void) {
 	int i,j;
 	

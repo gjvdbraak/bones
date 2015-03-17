@@ -10,15 +10,16 @@
 // == File information
 // Filename...........chunk/example07.c
 // Author.............Cedric Nugteren
-// Last modified on...07-May-2013
+// Last modified on...10-October-2014
 //
 
 #include <stdio.h>
 
 // This is 'example07', a chunk/chunk with a step of 2
 int main(void) {
-	int i;
+	int i, j;
 	int N = 256;
+	int temp;
 	
 	// Declare input/output arrays
 	int A[N];

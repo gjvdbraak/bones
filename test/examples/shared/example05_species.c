@@ -8,14 +8,14 @@
 // Web address........http://parse.ele.tue.nl/bones/
 //
 // == File information
-// Filename...........shared/example5.c
+// Filename...........shared/example05.c
 // Author.............Cedric Nugteren
-// Last modified on...07-May-2012
+// Last modified on...10-October-2014
 //
 
 #include <stdio.h>
 
-// This is 'example5', demonstrating an inner-loop only classification of a reduction to scalar
+// This is 'example05', demonstrating an inner-loop only classification of a reduction to scalar
 int main(void) {
 	int a,b,c;
 	

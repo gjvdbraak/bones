@@ -75,8 +75,8 @@ def setup_algorithms(examples)
 		
 		# Create an example primitive
 		primitive_name = 'example'
-		primitive_start = Bones::Preprocessor::PRIMITIVE_START+' '+example
-		primitive_end = Bones::Preprocessor::PRIMITIVE_END+' '+primitive_name
+		primitive_start = Bones::Preprocessor::SPECIES_START+' '+example
+		primitive_end = Bones::Preprocessor::SPECIES_END+' '+primitive_name
 
 		# Create a matching species for comparison
 		prefix = ''

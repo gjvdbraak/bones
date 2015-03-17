@@ -8,9 +8,9 @@
 // Web address........http://parse.ele.tue.nl/bones/
 //
 // == File information
-// Filename...........neighbourhood/example3.c
+// Filename...........neighbourhood/example03.c
 // Author.............Cedric Nugteren
-// Last modified on...16-April-2012
+// Last modified on...10-October-2014
 //
 
 #include <stdio.h>
@@ -23,7 +23,7 @@
 float ** alloc_2D(int size1, int size2);
 void free_2D(float ** array_2D);
 
-// This is 'example3', demonstrating a neighbourhood with only some values used (a cross) and a math.h square root function call
+// This is 'example03', demonstrating a neighbourhood with only some values used (a cross) and a math.h square root function call
 int main(void) {
 	int i,j;
 	int sizea = A;

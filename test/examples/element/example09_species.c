@@ -8,15 +8,15 @@
 // Web address........http://parse.ele.tue.nl/bones/
 //
 // == File information
-// Filename...........element/example9.c
+// Filename...........element/example09.c
 // Author.............Cedric Nugteren
-// Last modified on...16-April-2012
+// Last modified on...10-October-2014
 //
 
 #include <stdio.h>
 #include <stdlib.h>
 
-// This is 'example9', demonstrating a for-loop that does not start at zero
+// This is 'example09', demonstrating a for-loop that does not start at zero
 int main(void) {
 	int i;
 	int result;

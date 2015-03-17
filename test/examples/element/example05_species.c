@@ -8,15 +8,15 @@
 // Web address........http://parse.ele.tue.nl/bones/
 //
 // == File information
-// Filename...........element/example5.c
+// Filename...........element/example05.c
 // Author.............Cedric Nugteren
-// Last modified on...16-April-2012
+// Last modified on...10-October-2014
 //
 
 #include <stdio.h>
 #define SIZE 2311
 
-// This is 'example5', demonstrating multiple inputs and outputs of different types
+// This is 'example05', demonstrating multiple inputs and outputs of different types
 int main(void) {
 	int i;
 	float result = 0;
