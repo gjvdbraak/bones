@@ -28,3 +28,22 @@ class C::NodeList
 	end
 end
 
+# update the FloatLiteral and IntLiteral classes in CAST to print suffixes
+class C::FloatLiteral
+	def to_s
+		if suffix.nil?
+			val.to_s
+		else
+			val.to_s + suffix
+		end
+	end
+end
+class C::IntLiteral
+	def to_s
+		if suffix.nil?
+			val.to_s
+		else
+			val.to_s + suffix
+		end
+	end
+end
