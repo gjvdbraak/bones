@@ -69,6 +69,8 @@ module Bones
 			alloc_index, free_index = 0, 0
 			block_comment = false
 			a_scop_was_found = false
+			scop = 0
+			scop_copies = []
 			
 			# Process the file line by line
 			@source_code.each_line.with_index do |line,index|
@@ -142,7 +144,8 @@ module Bones
 									name = copy.split('[').first
 									domain = copy.scan(/\[(.+)\]/).join.split(DIM_SEP)
 									deadline = copy.split('|').last
-									@copies.push(Bones::Copy.new(name,domain,deadline,'in',"#{index*100+copynum}"))
+									@copies.push(Bones::Copy.new(scop,name,domain,deadline,'in',"#{index*100+copynum}"))
+									scop_copies.push(@copies[-1])
 									@target_code << "bones_copyin_#{index*100+copynum}_#{name}(#{name});"+NL
 								end
 								
@@ -153,17 +156,37 @@ module Bones
 									name = copy.split('[').first
 									domain = copy.scan(/\[(.+)\]/).join.split(DIM_SEP)
 									deadline = copy.split('|').last
-									@copies.push(Bones::Copy.new(name,domain,deadline,'out',"#{index*100+copynum}"))
+									@copies.push(Bones::Copy.new(scop,name,domain,deadline,'out',"#{index*100+copynum}"))
+									scop_copies.push(@copies[-1])
 									@target_code << "bones_copyout_#{index*100+copynum}_#{name}(#{name});"+NL
 								end
 							end
 							
 							# Check if it was a 'pragma scop' / 'pragma endscop' line
 							if line =~ /^#{WHITESPACE}#{SCOP_START}/
-								alloc_index = index
+								scop += 1
+								scop_copies = []
+								alloc_index = @target_code.length
 								a_scop_was_found = true
+								@target_code << 'bones_timer_start();'+NL
 							elsif line =~ /^#{WHITESPACE}#{SCOP_END}/
 								free_index = @target_code.length
+								@target_code << 'bones_timer_stop();'+NL
+								
+								# Add frees and mallocs
+								if @scheduler
+									alloc_code, free_code = '', ''
+									included_copies = []
+									scop_copies.each do |copy|
+										if !included_copies.include?(copy.name)
+											alloc_code += copy.get_function_call('alloc')+NL
+											free_code += copy.get_function_call('free')+NL
+											included_copies << copy.name
+										end
+									end
+									@target_code.insert(alloc_index, alloc_code)
+									@target_code << free_code
+								end
 							end
 							
 						else
@@ -182,31 +205,8 @@ module Bones
 			end
 			puts WARNING+'Begin/end kernel mismatch ('+@found_algorithms.to_s+' versus '+@algorithms.length.to_s+'), probably missing a "'+SPECIES_END+'"' unless @algorithms.length == @found_algorithms
 			
-			# Add frees and mallocs
-			if @scheduler
-				alloc_code, free_code = '', ''
-				included_copies = []
-				copies.each do |copy|
-					if !included_copies.include?(copy.name)
-						alloc_code += copy.get_function_call('alloc')+NL
-						free_code += copy.get_function_call('free')+NL
-						included_copies << copy.name
-					end
-				end
-			end
-			
-			# Add timers (whole scop timing) and frees/mallocs to the code
-			if a_scop_was_found
-				offset = @header_code.lines.count
-				@target_code.insert(alloc_index-offset, 'bones_timer_start();'+NL)
-				if @scheduler
-					@target_code.insert(alloc_index-offset+1, alloc_code)
-					@target_code.insert(free_index+2, free_code)
-					@target_code.insert(free_index+3, 'bones_timer_stop();'+NL)
-				else
-					@target_code.insert(free_index+2, 'bones_timer_stop();'+NL)
-				end
-			else
+			# Print warning if there is no SCoP found
+			if !a_scop_was_found
 				puts WARNING+'No "#pragma scop" and "#pragma endscop" found!'
 			end
 			

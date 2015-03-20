@@ -83,14 +83,22 @@ module Adarwin
 			# Parse the original source code into AST form (using CAST)
 			original_ast = parser.parse(preprocessor.parsed_code)
 			
+			# Process every SCoP, one by one
+			@id = 0
+			@result[:species_code] = preprocessor.target_code
+			preprocessor.scop_code.each do |scop_code|
+				process_scop(scop_code)
+			end
+		end
+		
+		def process_scop(scop_code)
 			# Create an AST of the SCoP (using CAST) and save a backup
-			scop_ast = C::Block.parse('{'+preprocessor.scop_code+'}')
+			scop_ast = C::Block.parse('{'+scop_code+'}')
 			original_scop_ast = scop_ast.clone
 			
 			# Process the scop to identify the loop nests of interest and to find the
 			# corresponding species. This is the method performing most of the work.
 			@nests = []
-			@id = 0
 			populate_nests(scop_ast)
 			
 			# Remove inner-loop (nested) species. This removes all species that are
@@ -141,7 +149,7 @@ module Adarwin
 			puts modified_scop if !@options[:silent]
 			
 			# Store the result
-			@result[:species_code] = preprocessor.target_code.gsub(preprocessor.scop_code,modified_scop)
+			@result[:species_code].gsub!(scop_code,modified_scop)
 		end
 		
 		# This method writes the output code to a file.
@@ -172,9 +180,9 @@ module Adarwin
 						# Only continue if the nest is an actual loop nest
 						if nest.for_statement?
 							@nests.push(Nest.new(new_level,nest,@id,@basename,!@options[:silent]))
+							@id += 1
 						end
 					end
-					@id += 1
 				end
 				
 				# Proceed to the next depth level.
