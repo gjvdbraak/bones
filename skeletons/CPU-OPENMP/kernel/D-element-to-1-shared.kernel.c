@@ -1,10 +1,10 @@
 /* STARTDEF
-void bones_kernel_<algorithm_name>_0(int bones_thread_id, int bones_thread_count, int bones_size, <devicedefinitions>, <argument_definition>);
+void bones_kernel_<algorithm_name>_0(int bones_thread_id, int bones_thread_count, int bones_size, <devicedefinitions>, <in0_type>* bones_partial_result, <argument_definition>);
 void bones_kernel_<algorithm_name>_1(int bones_size, <devicedefinitions>, <argument_definition>);
 void bones_kernel_<algorithm_name>_2(<out0_type> bones_initial_value, <out0_type><out0_devicepointer> <out0_name>, <argument_definition>);
 ENDDEF */
 // Start of the <algorithm_name> kernel (main part)
-void bones_kernel_<algorithm_name>_0(int bones_thread_id, int bones_thread_count, int bones_size, <devicedefinitions>, <argument_definition>) {
+void bones_kernel_<algorithm_name>_0(int bones_thread_id, int bones_thread_count, int bones_size, <devicedefinitions>, <in0_type>* bones_partial_result, <argument_definition>) {
   const int bones_work = DIV_CEIL(bones_size,bones_thread_count);
   const int bones_global_id = bones_thread_id;
   <ids>
@@ -22,7 +22,7 @@ void bones_kernel_<algorithm_name>_0(int bones_thread_id, int bones_thread_count
   }
   
   // Store the result
-  <out0_name>[bones_thread_id] = bones_private_memory;
+  bones_partial_result[bones_thread_id] = bones_private_memory;
 }
 
 // Start of the <algorithm_name> kernel (secondary part)
