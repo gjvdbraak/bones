@@ -101,6 +101,9 @@ module Adarwin
 			@nests = []
 			populate_nests(scop_ast)
 			
+			# return if no loop nests are found in the code
+			return unless @nests.length > 0
+			
 			# Remove inner-loop (nested) species. This removes all species that are
 			# found within another species. For completeness, this might be desired in
 			# some cases.
