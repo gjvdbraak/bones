@@ -282,7 +282,7 @@ module Bones
 				target.puts "#define ZEROCOPY 1"+NL if @options[:zero_copy] == 1 && @options[:target] == 'CPU-OPENCL-INTEL'
 				target.puts @result[:header_code]
 				target.puts
-				target.puts @result[:host_device_mem_globals]
+				target.puts @result[:host_device_mem_globals].uniq
 				target.puts
 				target.puts @result[:algorithm_declarations]
 				target.puts @result[:host_code_lists]
