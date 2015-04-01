@@ -1,4 +1,18 @@
 ###################
+### v1.6.0      ###
+###################
+
+General:
+- Add support for multiple scops in a file
+
+Bug fixes:
+- Fixed mismatch in kernel arguments of the OpenMP D-element-to-1 skeleton
+- Fixed the empty-scop bug in A-Darwin
+
+Miscellaneous:
+- Updated the documentation to include the latest Bones publication "Bones: An Automatic Skeleton-Based C-to-CUDA Compiler for GPUs"
+
+###################
 ### v1.5.0c     ###
 ###################
 
