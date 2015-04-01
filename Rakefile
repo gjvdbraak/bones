@@ -172,11 +172,12 @@ end
 
 # Generate HTML documentation using RDoc
 RDoc::Task.new do |rdoc|
-	rdoc.title = 'Bones'
+	version = File.read('VERSION')
+	rdoc.title = 'Bones - %s' % version
 	rdoc.options << '--line-numbers'
 	rdoc.rdoc_files.include(File.join('lib','**','*.rb'))
 	rdoc.rdoc_files.include('README.rdoc')
+	rdoc.rdoc_files.include('VERSION')
 	rdoc.rdoc_dir = 'rdoc'
 	rdoc.main = 'README.rdoc'
 end
-

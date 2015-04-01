@@ -20,7 +20,7 @@ module Adarwin
 			@header_code = ''
 			@parsed_code = ''
 			@target_code = ''
-			@scop_code = ''
+			@scop_code = []
 		end
 		
 		# This is the method to perform the actual preprocessing. This method takes
@@ -30,6 +30,7 @@ module Adarwin
 		# could have a commented-out SCoP or define or include.
 		def process
 			scop = false
+			scop_code = ''
 			scop_in_code = false
 			
 			# Process the file line by line
@@ -55,12 +56,14 @@ module Adarwin
 					# Found the end of a SCoP
 					elsif line =~ /^#{WHITESPACE}#{SCOP_END}/
 						scop = false
+						@scop_code.push(scop_code)
+						scop_code = ''
 						@parsed_code += '}'+NL
 					end
 					
 				# Nothing special in the code going on here
 				else
-					@scop_code += line if scop
+					scop_code += line if scop
 					@parsed_code += line
 					@target_code += line
 				end

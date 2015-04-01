@@ -3,9 +3,10 @@ module Bones
 	
 	# Class copyin/out
 	class Copy
-		attr_accessor :name, :domain, :deadline, :direction, :id
+		attr_accessor :scop, :name, :domain, :deadline, :direction, :id
 		
-		def initialize(name,domain,deadline,direction,id)
+		def initialize(scop,name,domain,deadline,direction,id)
+			@scop = scop
 			@name = name
 			@domain = domain
 			@deadline = deadline

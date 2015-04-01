@@ -2,6 +2,11 @@
 //////////// Timers ////////////////////
 ////////////////////////////////////////
 
+// Includes
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/time.h>
+
 // Timer
 struct timeval bones_start_time1;
 

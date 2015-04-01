@@ -204,9 +204,10 @@ module Bones
 				# Perform code generation (memory allocs)
 				allocs = []
 				preprocessor.copies.each do |copy|
-					if !allocs.include?(copy.name)
+					name_scop = Set.new([copy.name, copy.scop])
+					if !allocs.include?(name_scop)
 						generate_memory('alloc',copy,arrays,0)
-						allocs << copy.name
+						allocs << name_scop
 					end
 				end
 				
@@ -219,9 +220,10 @@ module Bones
 				# Perform code generation (memory frees)
 				frees = []
 				preprocessor.copies.each do |copy|
-					if !frees.include?(copy.name)
+					name_scop = Set.new([copy.name, copy.scop])
+					if !frees.include?(name_scop)
 						generate_memory('free',copy,arrays,0)
-						frees << copy.name
+						frees << name_scop
 					end
 				end
 			
@@ -273,13 +275,14 @@ module Bones
 			end
 			
 			# Populate the target file (host)
+			
 			File.open(File.join(directory,@options[:name]+OUTPUT_HOST+@extension),'w') do |target|
 				target.puts '#include <cuda_runtime.h>'+NL if @options[:target] == 'GPU-CUDA'
 				target.puts "#define ZEROCOPY 0"+NL if @options[:zero_copy] == 0 && @options[:target] == 'CPU-OPENCL-INTEL'
 				target.puts "#define ZEROCOPY 1"+NL if @options[:zero_copy] == 1 && @options[:target] == 'CPU-OPENCL-INTEL'
 				target.puts @result[:header_code]
 				target.puts
-				target.puts @result[:host_device_mem_globals]
+				target.puts @result[:host_device_mem_globals].uniq
 				target.puts
 				target.puts @result[:algorithm_declarations]
 				target.puts @result[:host_code_lists]

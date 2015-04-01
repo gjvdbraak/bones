@@ -116,7 +116,18 @@ Code documentation can be generated automatically using RDoc. Navigate to the in
 == Scientific publications
 Scientific publications related to Bones/A-Darwin can be obtained from http://www.cedricnugteren.nl/publications. Several publications are relevant:
 
-1. <b>Algorithmic Species Revisited: A Program Code Classification Based on Array References</b>, which provides details on the algorithm classification (the species) and A-Darwin (the tool). When refering to the algorithm classification in scientific work, you are kindly asked to include the following citation:
+1. <b>Bones: An Automatic Skeleton-Based C-to-CUDA Compiler for GPUs</b>, which provides details on the Bones source-to-source compiler, including optimizations in host-accelerator transfer and loop fusion in kernel code. When referring to GPU code generation using Bones, loop fusion or optimizations in host-accelerator transfer in scientific work, you are kindly asked to include the following citation:
+
+    @INPROCEEDINGS{Nugteren2015a,
+       author = {Cedric Nugteren and and Henk Corporaal},
+       title = {Bones: An Automatic Skeleton-Based C-to-CUDA Compiler for GPUs},
+       journal = {ACM Trans. Archit. Code Optim.},
+       volume = {11},
+       number = {4},
+       year = {2015},
+    }
+
+2. <b>Algorithmic Species Revisited: A Program Code Classification Based on Array References</b>, which provides details on the algorithm classification (the species) and A-Darwin (the tool). When referring to the algorithm classification in scientific work, you are kindly asked to include the following citation:
 
     @INPROCEEDINGS{Nugteren2013a,
        author = {Cedric Nugteren and Rosilde Corvino and Henk Corporaal},
@@ -125,7 +136,7 @@ Scientific publications related to Bones/A-Darwin can be obtained from http://ww
        year = {2013},
     }
 
-2. <b>Automatic Skeleton-Based Compilation through Integration with an Algorithm Classification</b>, which discusses the Bones source-to-source compiler. When refering to Bones in scientific work, you are kindly asked to include the following citation:
+3. <b>Automatic Skeleton-Based Compilation through Integration with an Algorithm Classification</b>, which discusses the Bones source-to-source compiler. When referring to Bones in scientific work, you are kindly asked to include the following citation:
 
     @INPROCEEDINGS{Nugteren2013b,
       author    = {Cedric Nugteren and Pieter Custers and Henk Corporaal},
@@ -148,4 +159,4 @@ With rake, A-Darwin can be tested on a set of examples '<tt>rake adarwin_test</t
 
 
 = Questions
-Questions can be directed by email. You can find contact details on the personal page of the author at http://www.cedricnugteren.nl/ or http://parse.ele.tue.nl/cnugteren/ or on the project page at github.
+Questions can be directed by email. You can find contact details on the personal page of the author at http://www.cedricnugteren.nl/ or on the project page at GitHub.
